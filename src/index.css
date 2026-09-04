@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0a0d14;
+    --bg-secondary: #121824;
+    --bg-card: rgba(18, 24, 36, 0.7);
+    --bg-card-hover: rgba(26, 35, 52, 0.85);
+    --glass-bg: rgba(15, 23, 42, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-hover: rgba(0, 240, 255, 0.4);
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    --accent-cyan: #00f0ff;
+    --accent-purple: #a855f7;
+    --accent-gradient: linear-gradient(135deg, #00f0ff 0%, #a855f7 50%, #ec4899 100%);
+    --accent-glow: rgba(0, 240, 255, 0.25);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+  }
+
+  [data-theme="emerald"] {
+    --bg-primary: #06130d;
+    --bg-secondary: #0d2218;
+    --bg-card: rgba(13, 34, 24, 0.7);
+    --accent-cyan: #10b981;
+    --accent-purple: #06b6d4;
+    --accent-gradient: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%);
+    --accent-glow: rgba(16, 185, 129, 0.25);
+    --glass-border-hover: rgba(16, 185, 129, 0.4);
+  }
+
+  [data-theme="sapphire"] {
+    --bg-primary: #070c1a;
+    --bg-secondary: #0f172a;
+    --bg-card: rgba(15, 23, 42, 0.7);
+    --accent-cyan: #38bdf8;
+    --accent-purple: #6366f1;
+    --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #8b5cf6 100%);
+    --accent-glow: rgba(56, 189, 248, 0.25);
+    --glass-border-hover: rgba(56, 189, 248, 0.4);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--glass-border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 240, 255, 0.1);
+}
