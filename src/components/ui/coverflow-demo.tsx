@@ -214,7 +214,7 @@ const SLIDES = [
 
 export default function CoverflowDemo() {
   return (
-    <div className="w-full overflow-hidden bg-background py-6">
+    <div className="w-full overflow-hidden bg-transparent py-6">
       <CoverflowCarousel slides={SLIDES} showCaption showNavigation showPagination />
     </div>
   );

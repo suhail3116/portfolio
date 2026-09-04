@@ -53,21 +53,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleTheme, onOpenTerminal })
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
+        whileHover={{ scale: 1.015 }}
         className={`fixed top-4 inset-x-0 mx-auto w-[94%] max-w-7xl z-50 transition-all duration-300 rounded-full ${
           scrolled
-            ? 'bg-[#060913]/95 backdrop-blur-2xl border border-white/20 shadow-[0_10px_35px_rgba(0,0,0,0.9)] py-2 px-4 sm:px-6'
-            : 'bg-[#0a0d17]/85 backdrop-blur-xl border border-white/10 shadow-2xl py-2.5 px-4 sm:px-6'
+            ? 'bg-[#060913]/95 backdrop-blur-2xl border border-white/20 shadow-[0_10px_35px_rgba(0,0,0,0.9)] hover:border-[#00f0ff]/50 hover:shadow-[0_15px_45px_rgba(0,240,255,0.25)] py-2 px-4 sm:px-6'
+            : 'bg-[#0a0d17]/85 backdrop-blur-xl border border-white/10 shadow-2xl hover:border-[#00f0ff]/40 hover:shadow-[0_15px_45px_rgba(0,240,255,0.2)] py-2.5 px-4 sm:px-6'
         }`}
       >
-        {/* Scroll Progress Bar at the Top Rim */}
-        <div className="absolute top-0 left-6 right-6 h-[2px] bg-white/5 overflow-hidden rounded-full pointer-events-none">
-          <div
-            className="h-full bg-gradient-to-r from-[#00f0ff] via-[#a855f7] to-[#ec4899] transition-all duration-150"
-            style={{ width: `${scrollProgress}%` }}
-          />
-        </div>
 
-        <div className="flex items-center justify-between gap-2">
+          {/* Scroll Progress Bar at the Top Rim */}
+          <div className="absolute top-0 left-6 right-6 h-[2px] bg-white/5 overflow-hidden rounded-full pointer-events-none z-20">
+            <div
+              className="h-full bg-gradient-to-r from-[#00f0ff] via-[#a855f7] to-[#ec4899] transition-all duration-150"
+              style={{ width: `${scrollProgress}%` }}
+            />
+          </div>
+
+          <div className="flex items-center justify-between gap-2 relative z-20">
           
           {/* Brand Logo & Developer Avatar */}
           <a

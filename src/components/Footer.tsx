@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Phone, MapPin, ArrowUp, Sparkles, Code2, Terminal } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, ArrowUp, Code2, Terminal } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
     { label: 'Skill Matrix', href: '#skills' },
     { label: '3D Showcase', href: '#projects' },
     { label: 'Experience', href: '#experience' },
-    { label: 'Certifications', href: '#experience' },
+    { label: 'Certifications', href: '#certifications' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -32,13 +32,19 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative bg-[#04060d] text-slate-400 border-t border-white/10 pt-16 pb-12 overflow-hidden">
+    <footer className="relative bg-[#04060d] text-slate-400 border-t border-white/10 pt-12 pb-12 overflow-hidden">
       {/* Background Ambient Glows */}
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#00f0ff]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#a855f7]/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <motion.div
+          whileHover={{ scale: 1.012 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="relative rounded-3xl p-6 sm:p-10 lg:p-12 bg-slate-900/40 backdrop-blur-xl border border-white/10 hover:border-[#00f0ff]/40 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(0,240,255,0.15)] transition-all duration-300 overflow-hidden"
+        >
+          <div className="relative z-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           
           {/* Column 1: Brand & Developer Bio (5 Cols) */}
           <div className="lg:col-span-5 space-y-5">
@@ -180,6 +186,8 @@ export const Footer: React.FC = () => {
           </motion.button>
         </div>
 
+          </div>
+        </motion.div>
       </div>
     </footer>
   );

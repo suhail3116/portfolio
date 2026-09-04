@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Cpu, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { TiltCard } from './ui/tilt-card';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 export const SkillMatrix: React.FC = () => {
@@ -119,32 +120,39 @@ export const SkillMatrix: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ duration: 0.3, delay: idx * 0.04 }}
-                className="glass-card p-6 rounded-2xl border border-white/10 hover:border-[#00f0ff]/50 hover:shadow-[0_10px_30px_rgba(0,240,255,0.15)] transition-all duration-300 group cursor-default backdrop-blur-xl bg-slate-900/75"
+                className="h-full"
               >
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="font-bold text-lg text-white group-hover:text-[#00f0ff] transition-colors flex items-center gap-2">
-                    {s.name}
-                  </h3>
-                  <span className="text-xs font-mono font-semibold text-[#00f0ff] bg-[#00f0ff]/10 border border-[#00f0ff]/20 px-2 py-0.5 rounded">
-                    {s.years}
-                  </span>
-                </div>
+                <TiltCard
+                  maxTilt={10}
+                  glareColor="rgba(0, 240, 255, 0.2)"
+                  className="glass-card p-6 rounded-2xl border border-white/10 hover:border-[#00f0ff]/50 hover:shadow-[0_12px_35px_rgba(0,240,255,0.2)] transition-all duration-300 group cursor-default backdrop-blur-xl bg-slate-900/75 h-full flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="font-bold text-lg text-white group-hover:text-[#00f0ff] transition-colors flex items-center gap-2">
+                        {s.name}
+                      </h3>
+                      <span className="text-xs font-mono font-semibold text-[#00f0ff] bg-[#00f0ff]/10 border border-[#00f0ff]/20 px-2 py-0.5 rounded">
+                        {s.years}
+                      </span>
+                    </div>
 
-                <div className="h-2 bg-slate-900/90 rounded-full overflow-hidden mb-3 p-0.5 border border-white/5">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${s.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.2 }}
-                    className="h-full bg-gradient-to-r from-[#00f0ff] via-[#a855f7] to-[#ec4899] rounded-full shadow-[0_0_10px_#00f0ff]"
-                  />
-                </div>
+                    <div className="h-2 bg-slate-900/90 rounded-full overflow-hidden mb-3 p-0.5 border border-white/5">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${s.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.2 }}
+                        className="h-full bg-gradient-to-r from-[#00f0ff] via-[#a855f7] to-[#ec4899] rounded-full shadow-[0_0_10px_#00f0ff]"
+                      />
+                    </div>
+                  </div>
 
-                <div className="text-xs text-slate-400 group-hover:text-slate-300 transition-colors">
-                  {s.highlight}
-                </div>
+                  <div className="text-xs text-slate-400 group-hover:text-slate-300 transition-colors mt-2">
+                    {s.highlight}
+                  </div>
+                </TiltCard>
               </motion.div>
             ))}
           </AnimatePresence>
