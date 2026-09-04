@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, GraduationCap, Trophy, Award, ShieldCheck, ExternalLink } from 'lucide-react';
+import { Briefcase, GraduationCap, Trophy, Award, ShieldCheck, ExternalLink, Linkedin } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
@@ -79,6 +79,99 @@ export const ExperienceTimeline: React.FC = () => {
             <p className="text-slate-400 text-sm mt-2">
               Verified certifications and technical accreditations linked directly to LinkedIn profile.
             </p>
+          </motion.div>
+
+          {/* Featured LinkedIn Video Credential Showcase */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-12 max-w-4xl mx-auto"
+          >
+            <motion.a
+              href="https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ y: -6, scale: 1.015 }}
+              transition={{ type: "spring", stiffness: 300, damping: 22 }}
+              className="relative block rounded-3xl p-1 bg-gradient-to-r from-[#00f0ff] via-[#10b981] to-[#a855f7] shadow-[0_10px_40px_rgba(0,240,255,0.15)] hover:shadow-[0_15px_50px_rgba(16,185,129,0.35)] transition-all duration-500 group overflow-hidden cursor-pointer"
+            >
+              {/* Background ambient glowing blur */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-[#00f0ff] via-[#10b981] to-[#a855f7] rounded-3xl blur-xl opacity-30 group-hover:opacity-75 transition-opacity duration-500 -z-10" />
+
+              <div className="relative rounded-[22px] bg-[#070b14] overflow-hidden border border-white/10">
+                {/* Header Top Bar inside video player */}
+                <div className="px-5 py-3.5 bg-slate-900/90 border-b border-white/10 flex items-center justify-between backdrop-blur-md">
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
+                      <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block" />
+                      <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
+                    </div>
+                    <span className="text-xs font-mono text-slate-300 font-semibold pl-2 border-l border-white/10 flex items-center gap-1.5">
+                      <Linkedin className="size-3.5 text-[#0077b5]" />
+                      <span>linkedin.com/in/muhammed-suhail-4a0a9936b</span>
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono font-bold tracking-wider">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                      LIVE RECORDING
+                    </span>
+                  </div>
+                </div>
+
+                {/* Video Container */}
+                <div className="relative aspect-video w-full bg-black overflow-hidden group/video">
+                  <video
+                    src="/assets/LinkedInCertificate.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-black/20 opacity-60 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none" />
+
+                  {/* Center hover indicator */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-3 px-6 py-3 rounded-full bg-[#0077b5]/90 border border-white/30 text-white font-bold text-sm shadow-[0_0_30px_rgba(0,119,181,0.6)] backdrop-blur-md">
+                      <Linkedin className="size-5 fill-current" />
+                      <span>View Recent Activity on LinkedIn</span>
+                      <ExternalLink className="size-4" />
+                    </div>
+                  </div>
+
+                  {/* Bottom info banner */}
+                  <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 bg-gradient-to-t from-[#070b14] via-[#070b14]/85 to-transparent flex flex-col sm:flex-row sm:items-center justify-between gap-3 pointer-events-none">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="px-2 py-0.5 rounded bg-[#00f0ff]/10 border border-[#00f0ff]/30 text-[#00f0ff] font-mono text-[10px] font-semibold">
+                          SCREEN RECORDING ARCHIVE
+                        </span>
+                        <span className="text-slate-400 text-xs">• Click anywhere to open</span>
+                      </div>
+                      <h4 className="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-[#00f0ff] transition-colors flex items-center gap-2">
+                        LinkedIn Licenses, Certifications & Recent Activity
+                        <ExternalLink className="size-4 text-[#00f0ff] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </h4>
+                    </div>
+
+                    <div className="shrink-0">
+                      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0077b5]/80 group-hover:bg-[#0077b5] border border-white/20 text-white text-xs font-bold font-mono tracking-wide transition-colors shadow-lg">
+                        <Linkedin className="size-3.5" />
+                        <span>OPEN LINKEDIN ACTIVITY</span>
+                        <ExternalLink className="size-3.5" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.a>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">

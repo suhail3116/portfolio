@@ -70,6 +70,12 @@ export function CoverflowCarousel({
   } | null>(null);
 
   const [selected, setSelected] = React.useState(0);
+  const [hoverSide, setHoverSide] = React.useState<"left" | "right" | null>(null);
+
+  const hoverTimerRef = React.useRef<NodeJS.Timeout | null>(null);
+  const velocityRef = React.useRef(0);
+  const autoRafRef = React.useRef<number | null>(null);
+  const isHoveringRef = React.useRef(false);
 
   const indexAt = React.useCallback(
     (pos: number) => ((Math.round(pos) % count) + count) % count,
@@ -148,7 +154,98 @@ export function CoverflowCarousel({
     [clamp, settle],
   );
 
+  const updateAutoScroll = React.useCallback(() => {
+    if (!isHoveringRef.current || Math.abs(velocityRef.current) < 0.0001) {
+      if (autoRafRef.current !== null) {
+        cancelAnimationFrame(autoRafRef.current);
+        autoRafRef.current = null;
+      }
+      return;
+    }
+
+    posRef.current = clamp(posRef.current + velocityRef.current);
+    targetRef.current = posRef.current;
+    const newIdx = indexAt(posRef.current);
+    setSelected(newIdx);
+    paint();
+
+    autoRafRef.current = requestAnimationFrame(updateAutoScroll);
+  }, [clamp, indexAt, paint]);
+
+  const handleContainerMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (dragRef.current?.dragged) return;
+
+    const frame = frameRef.current;
+    if (!frame) return;
+
+    const rect = frame.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const centerX = rect.width / 2;
+    const normX = (x - centerX) / (rect.width / 2); // -1 (left) to +1 (right)
+
+    // Center 20% deadzone so hovering near center remains steady
+    const deadZone = 0.2;
+    if (Math.abs(normX) < deadZone) {
+      velocityRef.current = 0;
+      setHoverSide(null);
+      return;
+    }
+
+    isHoveringRef.current = true;
+    const sign = Math.sign(normX);
+    const intensity = (Math.abs(normX) - deadZone) / (1 - deadZone);
+    // Smooth serial motion velocity: up to ~0.038 units/frame
+    velocityRef.current = sign * Math.pow(intensity, 1.25) * 0.038;
+    setHoverSide(sign > 0 ? "right" : "left");
+
+    if (autoRafRef.current === null) {
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+      autoRafRef.current = requestAnimationFrame(updateAutoScroll);
+    }
+  };
+
+  const handleContainerMouseLeave = () => {
+    isHoveringRef.current = false;
+    velocityRef.current = 0;
+    setHoverSide(null);
+    if (autoRafRef.current !== null) {
+      cancelAnimationFrame(autoRafRef.current);
+      autoRafRef.current = null;
+    }
+    settle(clamp(Math.round(posRef.current)));
+  };
+
+  const handleSlideHover = React.useCallback(
+    (index: number) => {
+      if (dragRef.current?.dragged || Math.abs(velocityRef.current) > 0.004) return;
+      if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+      hoverTimerRef.current = setTimeout(() => {
+        if (index !== selected && Math.abs(velocityRef.current) <= 0.004) {
+          goTo(index);
+        }
+      }, 80);
+    },
+    [goTo, selected],
+  );
+
+  const handleSlideLeave = React.useCallback(() => {
+    if (hoverTimerRef.current) {
+      clearTimeout(hoverTimerRef.current);
+      hoverTimerRef.current = null;
+    }
+  }, []);
+
   const onPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    isHoveringRef.current = false;
+    velocityRef.current = 0;
+    setHoverSide(null);
+    if (autoRafRef.current !== null) {
+      cancelAnimationFrame(autoRafRef.current);
+      autoRafRef.current = null;
+    }
     if (rafRef.current !== null) {
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
@@ -211,11 +308,18 @@ export function CoverflowCarousel({
   const handleSlideClick = (index: number, href?: string) => {
     if (dragRef.current?.dragged) return;
     
-    // If clicking a non-selected slide, scroll to it
+    isHoveringRef.current = false;
+    velocityRef.current = 0;
+    setHoverSide(null);
+    if (autoRafRef.current !== null) {
+      cancelAnimationFrame(autoRafRef.current);
+      autoRafRef.current = null;
+    }
+
     if (index !== selected) {
       goTo(index);
-    } else if (href) {
-      // If clicking the current active slide, open link in new tab
+    }
+    if (href) {
       window.open(href, "_blank", "noopener,noreferrer");
     }
   };
@@ -240,6 +344,8 @@ export function CoverflowCarousel({
   React.useEffect(
     () => () => {
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+      if (autoRafRef.current !== null) cancelAnimationFrame(autoRafRef.current);
+      if (hoverTimerRef.current !== null) clearTimeout(hoverTimerRef.current);
     },
     [],
   );
@@ -254,7 +360,30 @@ export function CoverflowCarousel({
       aria-roledescription="carousel"
       aria-label={label}
     >
-      <div className="relative">
+      <div className="relative overflow-hidden">
+        {/* Directional Serial Motion Glowing Cue Indicators */}
+        <div
+          className={cn(
+            "pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#00f0ff]/25 via-[#00f0ff]/5 to-transparent transition-opacity duration-300 z-30 flex items-center justify-start pl-3",
+            hoverSide === "left" ? "opacity-100" : "opacity-0",
+          )}
+        >
+          <div className="w-8 h-8 rounded-full bg-slate-950/80 border border-[#00f0ff]/50 flex items-center justify-center text-[#00f0ff] shadow-[0_0_15px_rgba(0,240,255,0.6)] animate-pulse">
+            <ChevronLeft className="size-4" />
+          </div>
+        </div>
+
+        <div
+          className={cn(
+            "pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#00f0ff]/25 via-[#00f0ff]/5 to-transparent transition-opacity duration-300 z-30 flex items-center justify-end pr-3",
+            hoverSide === "right" ? "opacity-100" : "opacity-0",
+          )}
+        >
+          <div className="w-8 h-8 rounded-full bg-slate-950/80 border border-[#00f0ff]/50 flex items-center justify-center text-[#00f0ff] shadow-[0_0_15px_rgba(0,240,255,0.6)] animate-pulse">
+            <ChevronRight className="size-4" />
+          </div>
+        </div>
+
         <div
           ref={frameRef}
           tabIndex={0}
@@ -262,6 +391,8 @@ export function CoverflowCarousel({
           onPointerMove={onPointerMove}
           onPointerUp={endDrag}
           onPointerCancel={endDrag}
+          onMouseMove={handleContainerMouseMove}
+          onMouseLeave={handleContainerMouseLeave}
           onKeyDown={(event) => {
             if (event.key === "ArrowLeft") {
               event.preventDefault();
@@ -294,8 +425,10 @@ export function CoverflowCarousel({
                 aria-roledescription="slide"
                 aria-label={`${index + 1} of ${count}`}
                 onClick={() => handleSlideClick(index, slide.href)}
+                onMouseEnter={() => handleSlideHover(index)}
+                onMouseLeave={handleSlideLeave}
                 className={cn(
-                  "absolute left-1/2 top-0 aspect-square overflow-hidden rounded-2xl bg-muted shadow-xl will-change-transform group cursor-pointer",
+                  "absolute left-1/2 top-0 aspect-square overflow-hidden rounded-2xl bg-muted shadow-xl will-change-transform group cursor-pointer transition-shadow duration-300 hover:shadow-[0_0_35px_rgba(0,240,255,0.4)]",
                   cardClassName,
                 )}
                 style={{ width: "var(--cf-card)" }}
@@ -305,10 +438,12 @@ export function CoverflowCarousel({
                     src={slide.src}
                     alt={slide.alt}
                     draggable={false}
-                    className="h-full w-full select-none object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="h-full w-full select-none object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-xs bg-slate-950/70 backdrop-blur-sm">
-                    View Repository <ExternalLink className="size-4 text-[#00f0ff]" />
+                  <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-sm pointer-events-none">
+                    <div className="w-12 h-12 rounded-full bg-[#00f0ff]/20 border border-[#00f0ff]/60 flex items-center justify-center shadow-[0_0_25px_rgba(0,240,255,0.6)] group-hover:scale-110 transition-transform">
+                      <ExternalLink className="size-5 text-[#00f0ff]" />
+                    </div>
                   </div>
                 </div>
               </div>

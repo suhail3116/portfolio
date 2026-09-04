@@ -54,9 +54,9 @@ export function App() {
             <span className="inline-block px-3 py-1 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/20 text-[#00f0ff] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
               3D Interactive Showcase
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Featured Projects & Repositories</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Featured Project Showcase</h2>
             <p className="text-slate-400 text-sm mt-2">
-              Drag, swipe, or click cards to cycle through interactive 3D project cards with direct GitHub links.
+              Move your cursor over any card to center it, or click the image to open the project.
             </p>
           </div>
           <CoverflowDemo />

@@ -25,7 +25,7 @@ const SLIDES = [
     subtitle: "Interactive 3D WebGL Rolls Royce Car Showcase Website",
     href: "https://github.com/suhail3116/3d-scrolling-website",
     meta: [
-      { label: "Repository", value: "3d-scrolling-website" },
+      { label: "Project", value: "3d-scrolling-website" },
       { label: "Tech", value: "Three.js, WebGL, 3D" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -37,7 +37,7 @@ const SLIDES = [
     subtitle: "Comprehensive Sports Data Visual Insights & Statistics",
     href: "https://github.com/suhail3116/ipl-analyzer",
     meta: [
-      { label: "Repository", value: "ipl-analyzer" },
+      { label: "Project", value: "ipl-analyzer" },
       { label: "Tech", value: "Python, JS Analytics" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -49,7 +49,7 @@ const SLIDES = [
     subtitle: "Smart Automated Document Analysis & Text Insights",
     href: "https://github.com/suhail3116/docsum",
     meta: [
-      { label: "Repository", value: "docsum" },
+      { label: "Project", value: "docsum" },
       { label: "Tech", value: "Python, React, NLP" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -61,7 +61,7 @@ const SLIDES = [
     subtitle: "AI Plant Disease Analysis & Leaf Health Detection Website",
     href: "https://github.com/suhail3116/agrigaurd",
     meta: [
-      { label: "Repository", value: "agrigaurd" },
+      { label: "Project", value: "agrigaurd" },
       { label: "Domain", value: "Plant Disease AI" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -73,7 +73,7 @@ const SLIDES = [
     subtitle: "Hackathon Competition Portal & Leaderboard Engine",
     href: "https://github.com/suhail3116/queenathon",
     meta: [
-      { label: "Repository", value: "queenathon" },
+      { label: "Project", value: "queenathon" },
       { label: "Event", value: "Live Hackathon" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -85,7 +85,7 @@ const SLIDES = [
     subtitle: "Visual Educational Tool for Chemistry & 3D Molecules",
     href: "https://github.com/suhail3116/Chemify",
     meta: [
-      { label: "Repository", value: "Chemify" },
+      { label: "Project", value: "Chemify" },
       { label: "Tech", value: "React, 3D Molecules" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -97,7 +97,7 @@ const SLIDES = [
     subtitle: "Customizable Web Tool for Bulk Certificate Design & Issue",
     href: "https://github.com/suhail3116/internship-certificate-editor",
     meta: [
-      { label: "Repository", value: "internship-certificate-editor" },
+      { label: "Project", value: "internship-certificate-editor" },
       { label: "Export", value: "Vector PDF / PNG" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -109,7 +109,7 @@ const SLIDES = [
     subtitle: "Interactive Quiz & Assessment Platform",
     href: "https://github.com/suhail3116/Quiz-Mastery",
     meta: [
-      { label: "Repository", value: "Quiz-Mastery" },
+      { label: "Project", value: "Quiz-Mastery" },
       { label: "Features", value: "Live Scoring UI" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -121,7 +121,7 @@ const SLIDES = [
     subtitle: "Digital Learning Workspace for Students & Peer Groups",
     href: "https://github.com/suhail3116/studyVerse",
     meta: [
-      { label: "Repository", value: "studyVerse" },
+      { label: "Project", value: "studyVerse" },
       { label: "Tech", value: "React, Node, Express" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -133,7 +133,7 @@ const SLIDES = [
     subtitle: "In-Browser Code Playground with Syntax Highlighting",
     href: "https://github.com/suhail3116/Editors-Repo",
     meta: [
-      { label: "Repository", value: "Editors-Repo" },
+      { label: "Project", value: "Editors-Repo" },
       { label: "Feature", value: "Live Code Preview" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -145,7 +145,7 @@ const SLIDES = [
     subtitle: "Retro Synthwave & Stranger Things Inspired Web Showcase",
     href: "https://github.com/suhail3116/hawkins-site",
     meta: [
-      { label: "Repository", value: "hawkins-site" },
+      { label: "Project", value: "hawkins-site" },
       { label: "Style", value: "Retro Synthwave" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -157,7 +157,7 @@ const SLIDES = [
     subtitle: "Tamper-Evident Digital E-Voting Web Application",
     href: "https://github.com/suhail3116/voting",
     meta: [
-      { label: "Repository", value: "voting" },
+      { label: "Project", value: "voting" },
       { label: "Security", value: "Encrypted Tallying" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -169,7 +169,7 @@ const SLIDES = [
     subtitle: "Organization & Student Council E-Voting System",
     href: "https://github.com/suhail3116/s-voting",
     meta: [
-      { label: "Repository", value: "s-voting" },
+      { label: "Project", value: "s-voting" },
       { label: "Domain", value: "Campus E-Voting" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -181,7 +181,7 @@ const SLIDES = [
     subtitle: "Medical Health Self-Assessment & Risk Analytics",
     href: "https://github.com/suhail3116/pcod",
     meta: [
-      { label: "Repository", value: "pcod" },
+      { label: "Project", value: "pcod" },
       { label: "Tech", value: "Python, JS Analytics" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -193,7 +193,7 @@ const SLIDES = [
     subtitle: "Corporate Services & Commercial Product Web Portal",
     href: "https://github.com/suhail3116/biscom",
     meta: [
-      { label: "Repository", value: "biscom" },
+      { label: "Project", value: "biscom" },
       { label: "Domain", value: "Corporate Services" },
       { label: "Author", value: "suhail3116" },
     ],
@@ -205,7 +205,7 @@ const SLIDES = [
     subtitle: "Arcade Web Game & Browser Canvas Benchmark",
     href: "https://github.com/suhail3116/crasher",
     meta: [
-      { label: "Repository", value: "crasher" },
+      { label: "Project", value: "crasher" },
       { label: "Tech", value: "Canvas 2D API" },
       { label: "Author", value: "suhail3116" },
     ],

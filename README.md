@@ -96,6 +96,7 @@
 - Agile Project Leadership (Agna Private Limited)
 - Python Data Science & NLP Automation
 - Smart India Hackathon National Finalist
+- **LinkedIn Verified Certificate Video Showcase**: Interactive screen recording archive with continuous loop, 3D hover animations, and direct one-click access to all recent LinkedIn posts & credentials.
 - Direct link on each certificate to verify via LinkedIn profile.
 
 ### 9. 🏛️ Production Footer
