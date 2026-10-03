@@ -124,7 +124,7 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onCycleTheme }) => {
         } else {
           setLogs((prev) => [
             ...prev,
-            { command: cmd, output: `No certification found matching "${query}". Type "certs" to view all 5 verified certifications.` }
+            { command: cmd, output: `No certification found matching "${query}". Type "certs" to view all ${PORTFOLIO_DATA.certifications.length} verified certifications.` }
           ]);
           return;
         }

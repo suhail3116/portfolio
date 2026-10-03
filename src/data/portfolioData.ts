@@ -61,6 +61,7 @@ export interface Certification {
   badgeColor: string;
   skills: string[];
   verificationUrl: string;
+  image?: string;
 }
 
 export const PORTFOLIO_DATA = {
@@ -104,6 +105,7 @@ export const PORTFOLIO_DATA = {
     { name: "Three.js & 3D WebGL", category: "frontend", level: 88, iconName: "Palette", years: "Creative", highlight: "Scroll-Driven 3D Models, Custom Shaders" },
     { name: "Tailwind CSS & Glassmorphism", category: "frontend", level: 95, iconName: "Layout", years: "Design", highlight: "Responsive Layouts, Dark Themes, shadcn" },
 
+    { name: "MongoDB & MERN Stack", category: "backend", level: 92, iconName: "Database", years: "MERN", highlight: "MongoDB Schemas, Express REST, Full-Stack" },
     { name: "Node.js & Express", category: "backend", level: 90, iconName: "Server", years: "Backend", highlight: "REST APIs, Middleware, Auth Handlers" },
     { name: "Python & Data Science", category: "backend", level: 88, iconName: "Terminal", years: "Analytics", highlight: "FastAPI, Data Analysis, NLP Pipelines" },
     { name: "Supabase & PostgreSQL", category: "backend", level: 90, iconName: "Database", years: "Realtime", highlight: "Row Level Security (RLS), Realtime DB" },
@@ -113,6 +115,17 @@ export const PORTFOLIO_DATA = {
   ],
 
   certifications: [
+    {
+      id: "cert-mern-vaizai",
+      title: "6-Month MERN Stack Development Internship",
+      issuer: "Vaizai Solutions (Mentor: Vijay S)",
+      issueDate: "Verified",
+      credentialId: "VAIZAI-MERN-6M",
+      badgeColor: "#3b82f6",
+      skills: ["MongoDB", "Express.js", "React.js", "Node.js", "Full-Stack Web Dev"],
+      verificationUrl: "https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/",
+      image: "/assets/vaizai_mern_certificate.png"
+    },
     {
       id: "cert-ai-claude",
       title: "Claude AI & Multimodal Prompt Engineering",
@@ -545,6 +558,18 @@ export const PORTFOLIO_DATA = {
 
   experience: [
     {
+      period: "6-MONTH INTERNSHIP",
+      role: "MERN Stack Development Intern",
+      company: "Vaizai Solutions",
+      location: "Full-Stack Development (Mentor: Vijay S)",
+      summary: "Successfully completed a 6-month full-stack development internship covering MongoDB, Express.js, React.js, and Node.js (MERN stack), gaining comprehensive practical knowledge through hands-on projects and real-time development activities.",
+      achievements: [
+        "Architected and built full-stack web application components using MongoDB NoSQL databases, Express.js REST APIs, React.js frontend interfaces, and Node.js runtime.",
+        "Engaged in real-time software development activities, hands-on production coding, and API endpoint integration under the direct mentorship of Vijay S.",
+        "Applied core full-stack web development principles, responsive UI design, and database schema modeling to real-world software solutions."
+      ]
+    },
+    {
       period: "HACKATHONS & COMPETITIVE TECH",
       role: "Team Leader across All Hackathons",
       company: "National & Regional Hackathon Sprints",
@@ -635,9 +660,9 @@ export const PORTFOLIO_DATA = {
   ],
 
   terminalCommands: {
-    help: "Available commands:\n  • about    - Brief bio and background\n  • skills   - List top developer skills\n  • projects - View comprehensive details for all 17 projects\n  • project <#|name> - View detailed spec for a specific project\n  • exp / experience - View leadership & hackathon team experience\n  • edu      - View education & degrees\n  • certs / certifications - View comprehensive details for all 5 verified certifications\n  • cert <#|name> - View detailed spec for a specific certification\n  • honors   - View hackathons & awards\n  • contact  - Display phone, email, LinkedIn links\n  • theme    - Cycle color theme (neon/emerald/sapphire)\n  • clear    - Clear terminal screen\n  • sudo hire - Unlock priority developer booking",
-    about: "M MUHAMMED SUHAIL (suhail3116) // AI & Pro Full-Stack Developer\nCoimbatore, Tamil Nadu, India\nSpecializing in production React/Node apps, client e-commerce platforms, Claude AI prompt engineering, 3D WebGL, and civic tech.",
-    skills: "PRIMARY TECH STACK:\n  AI & LLM:  Claude API, Prompt Engineering, Multimodal Vision, RAG\n  Frontend:  React, Next.js, TypeScript, Three.js, WebGL, Tailwind CSS\n  Backend:   Node.js, Express, Python, FastAPI, Supabase (RLS), PostgreSQL\n  Tools:     Git, GitHub, Agile Sprint Leadership",
+    help: "Available commands:\n  • about    - Brief bio and background\n  • skills   - List top developer skills\n  • projects - View comprehensive details for all 17 projects\n  • project <#|name> - View detailed spec for a specific project\n  • exp / experience - View leadership & internship experience\n  • edu      - View education & degrees\n  • certs / certifications - View comprehensive details for verified certifications\n  • cert <#|name> - View detailed spec for a specific certification\n  • honors   - View hackathons & awards\n  • contact  - Display phone, email, LinkedIn links\n  • theme    - Cycle color theme (neon/emerald/sapphire)\n  • clear    - Clear terminal screen\n  • sudo hire - Unlock priority developer booking",
+    about: "M MUHAMMED SUHAIL (suhail3116) // AI & MERN Full-Stack Developer\nCoimbatore, Tamil Nadu, India\nSpecializing in production MERN stack web apps, client e-commerce platforms, Claude AI prompt engineering, 3D WebGL, and civic tech.",
+    skills: "PRIMARY TECH STACK:\n  MERN & Full-Stack: MongoDB, Express.js, React.js, Node.js, Next.js, TypeScript\n  AI & LLM:          Claude API, Prompt Engineering, Multimodal Vision, RAG\n  Frontend & 3D:     React, Three.js, WebGL, Tailwind CSS, Glassmorphism\n  Tools & Leadership: Git, GitHub, Agile Sprint Leadership",
     projects: `=== M MUHAMMED SUHAIL // ALL 17 PUBLIC PROJECTS & REPOSITORIES ===
 
 [01] SUMAIYA TAILORS CLIENT PAGE (Client E-Commerce Web App)
@@ -778,101 +803,127 @@ export const PORTFOLIO_DATA = {
     edu: "EDUCATION:\n  • B.E. Computer Science Engineering @ Dhaanish Ahmed Institute of Tech, Coimbatore (Pursuing)\n  • Diploma in Computer Science Engineering (Completed)",
     certs: `=== M MUHAMMED SUHAIL // VERIFIED INDUSTRY CERTIFICATIONS & LICENSES ===
 
-[01] CLAUDE AI & MULTIMODAL PROMPT ENGINEERING
+[01] 6-MONTH MERN STACK DEVELOPMENT INTERNSHIP
+     • Issuer:        Vaizai Solutions (Mentor: Vijay S)
+     • Status:        Verified 6-Month Completion Credential
+     • Credential ID: VAIZAI-MERN-6M
+     • Core Skills:   MongoDB, Express.js, React.js, Node.js, Full-Stack Web Dev
+     • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/
+
+[02] CLAUDE AI & MULTIMODAL PROMPT ENGINEERING
      • Issuer:        Anthropic / CodePath Fellowship Track
      • Status:        Verified Credential
      • Credential ID: MS-AI-88392
      • Core Skills:   Claude API, Multimodal Vision, System Guardrails, Prompt Design
      • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/
 
-[02] FULL-STACK WEB DEVELOPMENT & MODERN REACT
+[03] FULL-STACK WEB DEVELOPMENT & MODERN REACT
      • Issuer:        Professional Web Engineering Certification
      • Status:        Verified Credential
      • Credential ID: MS-FS-94021
      • Core Skills:   React.js, TypeScript, Node.js, REST APIs, Tailwind CSS
      • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/
 
-[03] AGILE PROJECT LEADERSHIP & SOFTWARE DELIVERY
+[04] AGILE PROJECT LEADERSHIP & SOFTWARE DELIVERY
      • Issuer:        Agna Private Limited — Internship Certification
      • Status:        Verified Credential
      • Credential ID: AGNA-LEAD-2024
      • Core Skills:   Agile Sprint Leadership, Task Breakdown, Code Reviews, Cross-Functional Management
      • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/
 
-[04] PYTHON DATA SCIENCE & NLP AUTOMATION
+[05] PYTHON DATA SCIENCE & NLP AUTOMATION
      • Issuer:        Advanced Technical Competency
      • Status:        Verified Credential
      • Credential ID: MS-PY-73019
      • Core Skills:   Python, FastAPI, NLP Tokenization, Data Analytics
      • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/
 
-[05] SMART INDIA HACKATHON (SIH) NATIONAL FINALIST
+[06] SMART INDIA HACKATHON (SIH) NATIONAL FINALIST
      • Issuer:        Government of India / SIH Committee
      • Status:        National Finalist Distinction
      • Credential ID: SIH-NAT-FINALIST
      • Core Skills:   Rapid 36-Hour Sprint, Civic Problem Solving, System Architecture
      • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/
 
-Note: Type "cert <#|name>" (e.g. "cert 1", "cert claude", "cert agile") to view individual certification breakdown.`,
+Note: Type "cert <#|name>" (e.g. "cert 1", "cert vaizai", "cert claude") to view individual certification breakdown.`,
     certifications: `=== M MUHAMMED SUHAIL // VERIFIED INDUSTRY CERTIFICATIONS & LICENSES ===
 
-[01] CLAUDE AI & MULTIMODAL PROMPT ENGINEERING
+[01] 6-MONTH MERN STACK DEVELOPMENT INTERNSHIP
+     • Issuer:        Vaizai Solutions (Mentor: Vijay S)
+     • Status:        Verified 6-Month Completion Credential
+     • Credential ID: VAIZAI-MERN-6M
+     • Core Skills:   MongoDB, Express.js, React.js, Node.js, Full-Stack Web Dev
+     • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/
+
+[02] CLAUDE AI & MULTIMODAL PROMPT ENGINEERING
      • Issuer:        Anthropic / CodePath Fellowship Track
      • Status:        Verified Credential
      • Credential ID: MS-AI-88392
      • Core Skills:   Claude API, Multimodal Vision, System Guardrails, Prompt Design
      • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/
 
-[02] FULL-STACK WEB DEVELOPMENT & MODERN REACT
+[03] FULL-STACK WEB DEVELOPMENT & MODERN REACT
      • Issuer:        Professional Web Engineering Certification
      • Status:        Verified Credential
      • Credential ID: MS-FS-94021
      • Core Skills:   React.js, TypeScript, Node.js, REST APIs, Tailwind CSS
      • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/
 
-[03] AGILE PROJECT LEADERSHIP & SOFTWARE DELIVERY
+[04] AGILE PROJECT LEADERSHIP & SOFTWARE DELIVERY
      • Issuer:        Agna Private Limited — Internship Certification
      • Status:        Verified Credential
      • Credential ID: AGNA-LEAD-2024
      • Core Skills:   Agile Sprint Leadership, Task Breakdown, Code Reviews, Cross-Functional Management
      • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/
 
-[04] PYTHON DATA SCIENCE & NLP AUTOMATION
+[05] PYTHON DATA SCIENCE & NLP AUTOMATION
      • Issuer:        Advanced Technical Competency
      • Status:        Verified Credential
      • Credential ID: MS-PY-73019
      • Core Skills:   Python, FastAPI, NLP Tokenization, Data Analytics
      • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/
 
-[05] SMART INDIA HACKATHON (SIH) NATIONAL FINALIST
+[06] SMART INDIA HACKATHON (SIH) NATIONAL FINALIST
      • Issuer:        Government of India / SIH Committee
      • Status:        National Finalist Distinction
      • Credential ID: SIH-NAT-FINALIST
      • Core Skills:   Rapid 36-Hour Sprint, Civic Problem Solving, System Architecture
      • Verification:  https://www.linkedin.com/in/muhammed-suhail-4a0a9936b/recent-activity/all/
 
-Note: Type "cert <#|name>" (e.g. "cert 1", "cert claude", "cert agile") to view individual certification breakdown.`,
+Note: Type "cert <#|name>" (e.g. "cert 1", "cert vaizai", "cert claude") to view individual certification breakdown.`,
     exp: `=== M MUHAMMED SUHAIL // PROFESSIONAL EXPERIENCE & LEADERSHIP ===
 
-[01] TEAM LEADER ACROSS ALL HACKATHONS (Competitive Tech & Hackathons)
+[01] 6-MONTH MERN STACK DEVELOPMENT INTERN (Vaizai Solutions)
+     • Duration:    6-Month Internship Program
+     • Mentor:      Vijay S
+     • Role:        MERN Stack Development Intern
+     • Highlights:  Gained hands-on knowledge building full-stack web applications with MongoDB, Express.js, React.js, and Node.js through real-time development activities.
+
+[02] TEAM LEADER ACROSS ALL HACKATHONS (Competitive Tech & Hackathons)
      • Context:     B.E. CSE, Dhaanish Ahmed Institute of Technology
      • Squad:       Ayisha Afreen, Mohammed Basil, Muhammad Farhan, Balakumaran, Anusuya, Arul Devi (College Classmates in B.E. CSE)
      • Role:        Team Captain & Lead Engineer
      • Highlights:  Led 24-36hr sprint architecture at Smart India Hackathon (SIH National Finalist) and Hackathon 360 (24-Hour Hackathon Leader).
 
-[02] TEAM LEADER – INTERNSHIP PROJECT (Agna Private Limited)
+[03] TEAM LEADER – INTERNSHIP PROJECT (Agna Private Limited)
      • Location:    Coimbatore, Tamil Nadu
      • Role:        Team Leader
      • Highlights:  Agile sprint workflows, student engineering leadership, production code reviews.`,
     experience: `=== M MUHAMMED SUHAIL // PROFESSIONAL EXPERIENCE & LEADERSHIP ===
 
-[01] TEAM LEADER ACROSS ALL HACKATHONS (Competitive Tech & Hackathons)
+[01] 6-MONTH MERN STACK DEVELOPMENT INTERN (Vaizai Solutions)
+     • Duration:    6-Month Internship Program
+     • Mentor:      Vijay S
+     • Role:        MERN Stack Development Intern
+     • Highlights:  Gained hands-on knowledge building full-stack web applications with MongoDB, Express.js, React.js, and Node.js through real-time development activities.
+
+[02] TEAM LEADER ACROSS ALL HACKATHONS (Competitive Tech & Hackathons)
      • Context:     B.E. CSE, Dhaanish Ahmed Institute of Technology
      • Squad:       Ayisha Afreen, Mohammed Basil, Muhammad Farhan, Balakumaran, Anusuya, Arul Devi (College Classmates in B.E. CSE)
      • Role:        Team Captain & Lead Engineer
      • Highlights:  Led 24-36hr sprint architecture at Smart India Hackathon (SIH National Finalist) and Hackathon 360 (24-Hour Hackathon Leader).
 
-[02] TEAM LEADER – INTERNSHIP PROJECT (Agna Private Limited)
+[03] TEAM LEADER – INTERNSHIP PROJECT (Agna Private Limited)
      • Location:    Coimbatore, Tamil Nadu
      • Role:        Team Leader
      • Highlights:  Agile sprint workflows, student engineering leadership, production code reviews.`,

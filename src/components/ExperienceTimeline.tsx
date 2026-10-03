@@ -233,6 +233,22 @@ export const ExperienceTimeline: React.FC = () => {
                     </h3>
                     <div className="text-sm text-slate-400 mb-4">{cert.issuer}</div>
 
+                    {cert.image && (
+                      <div className="mb-4 rounded-xl overflow-hidden border border-white/10 group-hover:border-[#10b981]/40 transition-colors relative group/img">
+                        <img
+                          src={cert.image}
+                          alt={cert.title}
+                          className="w-full h-44 object-cover object-center group-hover/img:scale-105 transition-transform duration-500 cursor-pointer"
+                          onClick={() => window.open(cert.image, '_blank')}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-3 pointer-events-none">
+                          <span className="text-xs font-mono font-bold text-[#00f0ff] flex items-center gap-1.5">
+                            <ExternalLink className="size-3.5" /> View Full Certificate Image
+                          </span>
+                        </div>
+                      </div>
+                    )}
+
                     <div className="flex flex-wrap gap-1.5 mb-6">
                       {cert.skills.map((skill, sIdx) => (
                         <span key={sIdx} className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/5 group-hover:border-[#10b981]/30 transition-colors">
