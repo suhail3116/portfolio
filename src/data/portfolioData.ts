@@ -92,14 +92,12 @@ export const PORTFOLIO_DATA = {
 
   skillCategories: [
     { id: "all", name: "All Technologies" },
-    { id: "ai-llm", name: "AI & LLM Engineering" },
     { id: "frontend", name: "Frontend & 3D Web" },
     { id: "backend", name: "Backend & Databases" },
     { id: "tools", name: "Tools & Leadership" }
   ],
 
   skills: [
-    { name: "Claude API & Prompt Engineering", category: "ai-llm", level: 95, iconName: "Cpu", years: "AI Tech", highlight: "Multimodal Vision, System Guardrails, RAG" },
     { name: "React.js & Next.js", category: "frontend", level: 94, iconName: "Atom", years: "Modern", highlight: "Interactive SPAs, Modern Hooks, Custom UI" },
     { name: "TypeScript & JavaScript (ES6+)", category: "frontend", level: 93, iconName: "Code2", years: "Core", highlight: "Strict Typing, Async/Await, Web APIs" },
     { name: "Three.js & 3D WebGL", category: "frontend", level: 88, iconName: "Palette", years: "Creative", highlight: "Scroll-Driven 3D Models, Custom Shaders" },
@@ -662,7 +660,7 @@ export const PORTFOLIO_DATA = {
   terminalCommands: {
     help: "Available commands:\n  • about    - Brief bio and background\n  • skills   - List top developer skills\n  • projects - View comprehensive details for all 17 projects\n  • project <#|name> - View detailed spec for a specific project\n  • exp / experience - View leadership & internship experience\n  • edu      - View education & degrees\n  • certs / certifications - View comprehensive details for verified certifications\n  • cert <#|name> - View detailed spec for a specific certification\n  • honors   - View hackathons & awards\n  • contact  - Display phone, email, LinkedIn links\n  • theme    - Cycle color theme (neon/emerald/sapphire)\n  • clear    - Clear terminal screen\n  • sudo hire - Unlock priority developer booking",
     about: "M MUHAMMED SUHAIL (suhail3116) // AI & MERN Full-Stack Developer\nCoimbatore, Tamil Nadu, India\nSpecializing in production MERN stack web apps, client e-commerce platforms, Claude AI prompt engineering, 3D WebGL, and civic tech.",
-    skills: "PRIMARY TECH STACK:\n  MERN & Full-Stack: MongoDB, Express.js, React.js, Node.js, Next.js, TypeScript\n  AI & LLM:          Claude API, Prompt Engineering, Multimodal Vision, RAG\n  Frontend & 3D:     React, Three.js, WebGL, Tailwind CSS, Glassmorphism\n  Tools & Leadership: Git, GitHub, Agile Sprint Leadership",
+    skills: "PRIMARY TECH STACK:\n  MERN & Full-Stack: MongoDB, Express.js, React.js, Node.js, Next.js, TypeScript\n  Frontend & 3D:     React, Three.js, WebGL, Tailwind CSS, Glassmorphism\n  Backend:           Node.js, Express, Python, FastAPI, Supabase, PostgreSQL\n  Tools & Leadership: Git, GitHub, Agile Sprint Leadership",
     projects: `=== M MUHAMMED SUHAIL // ALL 17 PUBLIC PROJECTS & REPOSITORIES ===
 
 [01] SUMAIYA TAILORS CLIENT PAGE (Client E-Commerce Web App)
