@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
   const titles = [
     "AI & Full Stack Engineer",
     "React & TypeScript Developer",
-    "Claude AI Prompt Specialist",
+    "RAG Developer",
     "3D WebGL Web Developer"
   ];
 

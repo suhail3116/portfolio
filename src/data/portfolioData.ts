@@ -68,15 +68,15 @@ export const PORTFOLIO_DATA = {
   profile: {
     name: "M MUHAMMED SUHAIL",
     handle: "suhail3116",
-    title: "AI & Pro Full-Stack Developer",
-    tagline: "Building High-Scale Web Platforms, Claude AI Apps, 3D WebGL Experiences & Client E-Commerce Systems",
+    title: "AI, RAG & Pro Full-Stack Developer",
+    tagline: "Building High-Scale Web Platforms, Local RAG Systems, 3D WebGL Experiences & Client E-Commerce Systems",
     location: "Coimbatore, Tamil Nadu, India",
     status: "Open for Full-Stack Contracts & AI Engineering Roles",
     statusColor: "#10b981",
-    bio: "Passionate AI & Full-Stack Developer pursuing B.E. in Computer Science Engineering. Experienced in crafting production web apps, client e-commerce platforms, Claude API prompt architectures, and 3D WebGL experiences.",
+    bio: "Passionate AI, RAG & Full-Stack Developer pursuing B.E. in Computer Science Engineering. Experienced in crafting production web apps, client e-commerce platforms, local RAG architectures, and 3D WebGL experiences.",
     avatar: "/assets/avatar_user.jpg",
     stats: [
-      { label: "Public Repos", value: "17" },
+      { label: "Public Repos", value: "21" },
       { label: "Voters Served", value: "700+" },
       { label: "Client Apps", value: "Live" },
       { label: "Certifications", value: "Verified" }
@@ -103,6 +103,7 @@ export const PORTFOLIO_DATA = {
     { name: "Three.js & 3D WebGL", category: "frontend", level: 88, iconName: "Palette", years: "Creative", highlight: "Scroll-Driven 3D Models, Custom Shaders" },
     { name: "Tailwind CSS & Glassmorphism", category: "frontend", level: 95, iconName: "Layout", years: "Design", highlight: "Responsive Layouts, Dark Themes, shadcn" },
 
+    { name: "RAG & Vector Search", category: "backend", level: 93, iconName: "Cpu", years: "AI / RAG", highlight: "ChromaDB, LangChain, Hybrid BM25, Ollama" },
     { name: "MongoDB & MERN Stack", category: "backend", level: 92, iconName: "Database", years: "MERN", highlight: "MongoDB Schemas, Express REST, Full-Stack" },
     { name: "Node.js & Express", category: "backend", level: 90, iconName: "Server", years: "Backend", highlight: "REST APIs, Middleware, Auth Handlers" },
     { name: "Python & Data Science", category: "backend", level: 88, iconName: "Terminal", years: "Analytics", highlight: "FastAPI, Data Analysis, NLP Pipelines" },
@@ -176,8 +177,52 @@ export const PORTFOLIO_DATA = {
     }
   ],
 
-  // ALL 17 PUBLIC REPOSITORIES
+  // ALL 21 PUBLIC REPOSITORIES
   projects: [
+    {
+      id: "RAG-Guide",
+      title: "WikiAgent: Local Technical Knowledge RAG Chatbot & Agent",
+      subtitle: "100% Private Grounded RAG with Ollama, LangChain & ChromaDB",
+      category: "RAG & AI Engineering",
+      featured: true,
+      image: "/assets/projects/rag_guide.jpg",
+      metrics: [
+        { label: "Vector DB", value: "ChromaDB + HNSW" },
+        { label: "Inference", value: "Ollama LLaMA 3.2" },
+        { label: "Corpus", value: "37 Curated Domains" }
+      ],
+      tags: ["Python", "RAG", "LangChain", "ChromaDB", "Ollama", "FastAPI", "Rich CLI"],
+      description: "A 100% private, local, grounded Retrieval-Augmented Generation (RAG) conversational agent powered by Ollama, LangChain, ChromaDB, and curated engineering workflows with sub-second token streaming and collapsible source citations.",
+      highlights: [
+        "Architected an offline, privacy-first local RAG conversational agent powered by LLaMA 3.2, nomic-embed-text (768-dim), and ChromaDB vector indexing.",
+        "Constructed a 37-domain technical knowledge corpus with recursive character text chunking and persistent offline disk caching.",
+        "Delivered dual-interface deployment: an interactive Rich Terminal CLI agent and a modern FastAPI web chat interface with collapsible citations."
+      ],
+      github: "https://github.com/suhail3116/RAG-Guide",
+      live: "https://github.com/suhail3116/RAG-Guide"
+    },
+    {
+      id: "SIH26045-Problem-Solution",
+      title: "IP-SAKTI Sahayak (SIH26045): AYUSH Intellectual Property AI Assistant",
+      subtitle: "Multilingual Voice-First RAG Assistant for Herbal Patents & Regulatory Law",
+      category: "Civic Tech & RAG AI",
+      featured: true,
+      image: "/assets/projects/sih26045.jpg",
+      metrics: [
+        { label: "Event", value: "SIH 2026 Finalist" },
+        { label: "Search Engine", value: "BM25 + Dense Hybrid" },
+        { label: "Speech Tech", value: "7+ Indian Languages" }
+      ],
+      tags: ["React", "Vite", "Tailwind CSS", "Hybrid RAG", "Web Speech API", "ChromaDB", "BGE-M3"],
+      description: "An intelligent, voice-first decision support system engineered for Smart India Hackathon 2026, simplifying Indian Intellectual Property laws (Patents Act § 3(p), Biological Diversity Act, Drugs & Cosmetics Rules) for Ayurveda startups and herbal researchers.",
+      highlights: [
+        "Built a hybrid RAG retrieval pipeline combining BM25 sparse keyword matching and BGE-M3 dense semantic vectors with cross-encoder re-ranking for 95%+ legal section accuracy.",
+        "Engineered multilingual voice interface supporting real-time voice queries in 7+ Indian languages via Web Speech API.",
+        "Integrated Sanskrit botanical taxonomy mapper, dynamic RAGAS confidence scoring meter, and 4-step compliance wizard."
+      ],
+      github: "https://github.com/suhail3116/SIH26045-Problem-Solution",
+      live: "https://github.com/suhail3116/SIH26045-Problem-Solution"
+    },
     {
       id: "ST-clientPage",
       title: "Sumaiya Tailors: Bespoke Blouse & Maggam Work Web Platform",
@@ -551,6 +596,50 @@ export const PORTFOLIO_DATA = {
       ],
       github: "https://github.com/suhail3116/crasher",
       live: "https://github.com/suhail3116/crasher"
+    },
+    {
+      id: "car-landing-page",
+      title: "VALENCE MOTORS: Ultra-Luxury Electric Hypercar Web Showcase",
+      subtitle: "Cyberpunk Digital Showroom for Solid-State Battery Hypercar Startup",
+      category: "Frontend & 3D Web",
+      featured: false,
+      image: "/assets/projects/valence_hypercar.jpg",
+      metrics: [
+        { label: "Concept", value: "Valence Hypercar" },
+        { label: "UI / UX", value: "Cyberpunk Aero" },
+        { label: "Visuals", value: "60 FPS Interactive" }
+      ],
+      tags: ["React", "JavaScript", "Tailwind CSS", "Interactive UI", "Cyberpunk Design"],
+      description: "A luxury digital showroom web experience for Valence Motors featuring active morphing aerodynamics, biometric cockpit telemetry showcase, and futuristic interactive automotive configurator.",
+      highlights: [
+        "Designed an interactive automotive landing portal highlighting solid-state graphene battery telemetry and aero engineering.",
+        "Crafted high-performance responsive cyber layouts with dark-glass aesthetic, custom animations, and mobile-optimized touch controls.",
+        "Implemented interactive vehicle feature hotspots and dynamic spec comparison sheets."
+      ],
+      github: "https://github.com/suhail3116/car-landing-page",
+      live: "https://github.com/suhail3116/car-landing-page"
+    },
+    {
+      id: "portfolio",
+      title: "Pro Developer Portfolio: Interactive 3D WebGL & Cyberpunk Terminal",
+      subtitle: "Modern Personal Portfolio with WebGL Particle Engine & Custom CLI",
+      category: "Full Stack & 3D Web",
+      featured: false,
+      image: "/assets/projects/certificate_editor.jpg",
+      metrics: [
+        { label: "Architecture", value: "React + Vite + TS" },
+        { label: "Visual Engine", value: "Motion & Canvas" },
+        { label: "Interactive", value: "Embedded CLI Terminal" }
+      ],
+      tags: ["React 18", "TypeScript", "Tailwind CSS", "Motion", "Vite", "Canvas"],
+      description: "Production developer portfolio web platform engineered with interactive 3D WebGL coverflow carousel, custom CLI command-line emulator, dynamic theme switcher, and verified credential archives.",
+      highlights: [
+        "Built responsive 3D coverflow carousel and tilt-card micro-interactions using Framer Motion.",
+        "Designed interactive terminal CLI emulator with real-time command evaluation, custom themes, and sound feedback.",
+        "Engineered verified licenses and certifications modal with high-res document viewer and LinkedIn verification."
+      ],
+      github: "https://github.com/suhail3116/portfolio",
+      live: "https://github.com/suhail3116/portfolio"
     }
   ],
 
@@ -658,12 +747,28 @@ export const PORTFOLIO_DATA = {
   ],
 
   terminalCommands: {
-    help: "Available commands:\n  • about    - Brief bio and background\n  • skills   - List top developer skills\n  • projects - View comprehensive details for all 17 projects\n  • project <#|name> - View detailed spec for a specific project\n  • exp / experience - View leadership & internship experience\n  • edu      - View education & degrees\n  • certs / certifications - View comprehensive details for verified certifications\n  • cert <#|name> - View detailed spec for a specific certification\n  • honors   - View hackathons & awards\n  • contact  - Display phone, email, LinkedIn links\n  • theme    - Cycle color theme (neon/emerald/sapphire)\n  • clear    - Clear terminal screen\n  • sudo hire - Unlock priority developer booking",
-    about: "M MUHAMMED SUHAIL (suhail3116) // AI & MERN Full-Stack Developer\nCoimbatore, Tamil Nadu, India\nSpecializing in production MERN stack web apps, client e-commerce platforms, Claude AI prompt engineering, 3D WebGL, and civic tech.",
-    skills: "PRIMARY TECH STACK:\n  MERN & Full-Stack: MongoDB, Express.js, React.js, Node.js, Next.js, TypeScript\n  Frontend & 3D:     React, Three.js, WebGL, Tailwind CSS, Glassmorphism\n  Backend:           Node.js, Express, Python, FastAPI, Supabase, PostgreSQL\n  Tools & Leadership: Git, GitHub, Agile Sprint Leadership",
-    projects: `=== M MUHAMMED SUHAIL // ALL 17 PUBLIC PROJECTS & REPOSITORIES ===
+    help: "Available commands:\n  • about    - Brief bio and background\n  • skills   - List top developer skills\n  • projects - View comprehensive details for all 21 projects\n  • project <#|name> - View detailed spec for a specific project\n  • exp / experience - View leadership & internship experience\n  • edu      - View education & degrees\n  • certs / certifications - View comprehensive details for verified certifications\n  • cert <#|name> - View detailed spec for a specific certification\n  • honors   - View hackathons & awards\n  • contact  - Display phone, email, LinkedIn links\n  • theme    - Cycle color theme (neon/emerald/sapphire)\n  • clear    - Clear terminal screen\n  • sudo hire - Unlock priority developer booking",
+    about: "M MUHAMMED SUHAIL (suhail3116) // AI, RAG & MERN Full-Stack Developer\nCoimbatore, Tamil Nadu, India\nSpecializing in production MERN stack web apps, client e-commerce platforms, local RAG architectures, 3D WebGL, and civic tech.",
+    skills: "PRIMARY TECH STACK:\n  AI & RAG:          Local RAG Architectures, ChromaDB, LangChain, Ollama, Hybrid BM25\n  MERN & Full-Stack: MongoDB, Express.js, React.js, Node.js, Next.js, TypeScript\n  Frontend & 3D:     React, Three.js, WebGL, Tailwind CSS, Glassmorphism\n  Backend:           Node.js, Express, Python, FastAPI, Supabase, PostgreSQL\n  Tools & Leadership: Git, GitHub, Agile Sprint Leadership",
+    projects: `=== M MUHAMMED SUHAIL // ALL 21 PUBLIC PROJECTS & REPOSITORIES ===
 
-[01] SUMAIYA TAILORS CLIENT PAGE (Client E-Commerce Web App)
+[01] WIKIAGENT: LOCAL TECHNICAL KNOWLEDGE RAG CHATBOT & AGENT (RAG & AI Engineering)
+     • Domain:      100% Local, Private Grounded RAG Agent with Ollama & ChromaDB
+     • Stack:       Python, RAG, LangChain, ChromaDB, Ollama, FastAPI, Rich CLI
+     • Metrics:     ChromaDB + HNSW | Ollama LLaMA 3.2 | 37 Curated Domains
+     • Details:     A 100% private, local, grounded Retrieval-Augmented Generation (RAG) conversational agent powered by Ollama, LangChain, ChromaDB, and curated engineering workflows with sub-second token streaming and collapsible source citations.
+     • GitHub Repo: https://github.com/suhail3116/RAG-Guide
+     • Live Demo:   https://github.com/suhail3116/RAG-Guide
+
+[02] IP-SAKTI SAHAYAK (SIH26045): AYUSH INTELLECTUAL PROPERTY AI ASSISTANT (Civic Tech & RAG AI)
+     • Domain:      Multilingual Voice-First RAG Assistant for Herbal Patents & Regulatory Law
+     • Stack:       React, Vite, Tailwind CSS, Hybrid RAG, Web Speech API, ChromaDB, BGE-M3
+     • Metrics:     SIH 2026 Finalist | BM25 + Dense Hybrid | 7+ Indian Languages
+     • Details:     An intelligent, voice-first decision support system engineered for Smart India Hackathon 2026, simplifying Indian Intellectual Property laws for Ayurveda startups and herbal researchers.
+     • GitHub Repo: https://github.com/suhail3116/SIH26045-Problem-Solution
+     • Live Demo:   https://github.com/suhail3116/SIH26045-Problem-Solution
+
+[03] SUMAIYA TAILORS CLIENT PAGE (Client E-Commerce Web App)
      • Domain:      Bespoke Blouse Stitching, Maggam Work & Saree Pre-Pleating
      • Stack:       React, JavaScript, Tailwind CSS, Netlify, WhatsApp API
      • Metrics:     Client: Sumaiya Tailors Studio | Live Deployment | Direct WhatsApp
@@ -671,7 +776,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/ST-clientPage
      • Live App:    https://sumaiya-tailors.netlify.app/
 
-[02] EV-CAST / VOTING (Civic Tech & Web Security)
+[04] EV-CAST / VOTING (Civic Tech & Web Security)
      • Domain:      Secure Institutional Electronic Voting Platform
      • Stack:       JavaScript, HTML5, CSS3, Supabase Auth, PostgreSQL, Realtime DB
      • Metrics:     700+ Active Voters | Supabase RLS Policies | Real-Time DB Sync
@@ -679,7 +784,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/voting
      • Live Demo:   https://github.com/suhail3116/voting
 
-[03] 3D SCROLLING WEBSITE: ROLLS-ROYCE (Frontend & 3D Web)
+[05] 3D SCROLLING WEBSITE: ROLLS-ROYCE (Frontend & 3D Web)
      • Domain:      Immersive WebGL 3D Rolls-Royce Scroll-Driven Showcase
      • Stack:       Vanilla JS, Three.js, WebGL, CSS Glassmorphism, HTML5
      • Metrics:     60 FPS Render Loop | WebGL Particles | Scroll-Driven Shaders
@@ -687,7 +792,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/3d-scrolling-website
      • Live Demo:   https://github.com/suhail3116/3d-scrolling-website
 
-[04] AGRIGUARD (Computer Vision & AgriTech AI)
+[06] AGRIGUARD (Computer Vision & AgriTech AI)
      • Domain:      Multimodal AI Crop Protection & Leaf Health Detection Website
      • Stack:       Python, Claude API (Vision), Multimodal AI, OpenCV, JavaScript
      • Metrics:     Claude Vision AI | Tamil Nadu AgriTech | Structured Remedial JSON
@@ -695,7 +800,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/agrigaurd
      • Live Demo:   https://github.com/suhail3116/agrigaurd
 
-[05] PCOD CARE AI (Healthcare AI & Assistant)
+[07] PCOD CARE AI (Healthcare AI & Assistant)
      • Domain:      Medical Health Assistant & Empathetic AI Diagnostic Guidance
      • Stack:       Python, Claude API (Anthropic), FastAPI, Prompt Engineering
      • Metrics:     Claude LLM Engine | Empathetic Guardrails | Patient Guidance Flow
@@ -703,7 +808,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/pcod
      • Live Demo:   https://github.com/suhail3116/pcod
 
-[06] IPL ANALYZER (Sports Data Analytics)
+[08] IPL ANALYZER (Sports Data Analytics)
      • Domain:      Comprehensive Cricket Data Analysis & Visual Dashboards
      • Stack:       Python, JavaScript, Data Visualization, REST API
      • Metrics:     Historical IPL Seasons Data | Real-time Metrics | Dynamic Visuals
@@ -711,7 +816,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/ipl-analyzer
      • Live Demo:   https://github.com/suhail3116/ipl-analyzer
 
-[07] DOCSUM (NLP & Productivity)
+[09] DOCSUM (NLP & Productivity)
      • Domain:      Smart Automated Document Analysis & Text Summarizer
      • Stack:       Python, Claude API, PyPDF2, NLP, React
      • Metrics:     Token Chunking Pipeline | PyPDF2 Ingestion | Hierarchical Summaries
@@ -719,7 +824,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/docsum
      • Live Demo:   https://github.com/suhail3116/docsum
 
-[08] CHEMIFY (STEM EdTech & Interactive 3D)
+[10] CHEMIFY (STEM EdTech & Interactive 3D)
      • Domain:      Visual Educational Tool for Chemical Reactions & 3D Models
      • Stack:       Python, Claude API, React, Prompt Design, 3D Molecules
      • Metrics:     3D Molecular Models | Step-by-step Reasoning | Multi-turn Context
@@ -727,7 +832,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/Chemify
      • Live Demo:   https://github.com/suhail3116/Chemify
 
-[09] QUEENATHON (Event Tech Web App)
+[11] QUEENATHON (Event Tech Web App)
      • Domain:      Hackathon Competition Portal & Leaderboard Engine
      • Stack:       JavaScript, HTML5, CSS3, Event Tech
      • Metrics:     Multi-Team Registration | Live Agenda Timeline | Project Submissions
@@ -735,7 +840,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/queenathon
      • Live Demo:   https://github.com/suhail3116/queenathon
 
-[10] INTERNSHIP CERTIFICATE GENERATOR (Web Automation Tool)
+[12] INTERNSHIP CERTIFICATE GENERATOR (Web Automation Tool)
      • Domain:      Customizable Web Tool for Bulk Certificate Design & Issue
      • Stack:       JavaScript, Canvas API, HTML5, CSS3
      • Metrics:     Vector PDF / PNG Output | Dynamic Templates | Instant CSV Batch Export
@@ -743,7 +848,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/internship-certificate-editor
      • Live Demo:   https://github.com/suhail3116/internship-certificate-editor
 
-[11] QUIZ-MASTERY (EduTech Platform)
+[13] QUIZ-MASTERY (EduTech Platform)
      • Domain:      Gamified Testing & Knowledge Evaluation Engine
      • Stack:       JavaScript, React, CSS3, State Management
      • Metrics:     Instant Feedback Scoring | Per-Question Timer | Gamified Dark UI
@@ -751,7 +856,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/Quiz-Mastery
      • Live Demo:   https://github.com/suhail3116/Quiz-Mastery
 
-[12] STUDYVERSE (Collaboration & Full-Stack Platform)
+[14] STUDYVERSE (Collaboration & Full-Stack Platform)
      • Domain:      Digital Learning Workspace for Students & Peer Groups
      • Stack:       React, Node.js, Express, Tailwind CSS
      • Metrics:     Group Study Hub | Shared Notes Archive | Assignment Task Board
@@ -759,7 +864,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/studyVerse
      • Live Demo:   https://github.com/suhail3116/studyVerse
 
-[13] EDITORS-REPO (Developer In-Browser IDE)
+[15] EDITORS-REPO (Developer In-Browser IDE)
      • Domain:      In-Browser Code Playground with Live Preview & Syntax Highlighting
      • Stack:       TypeScript, Monaco / CodeMirror, CSS3, DOM API
      • Metrics:     HTML/CSS/JS Support | Split-Pane Live View | LocalStorage Drafts
@@ -767,7 +872,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/Editors-Repo
      • Live Demo:   https://github.com/suhail3116/Editors-Repo
 
-[14] HAWKINS SITE (Creative Frontend Experience)
+[16] HAWKINS SITE (Creative Frontend Experience)
      • Domain:      Retro Synthwave & Stranger Things Inspired Web Showcase
      • Stack:       JavaScript, HTML5, CSS3 Keyframe Animations
      • Metrics:     Retro Synthwave Theme | CRT Scanlines & Glow | Atmospheric Audio
@@ -775,7 +880,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/hawkins-site
      • Live Demo:   https://github.com/suhail3116/hawkins-site
 
-[15] S-VOTING (Student & Campus Governance Portal)
+[17] S-VOTING (Student & Campus Governance Portal)
      • Domain:      Organization & Student Council E-Voting System
      • Stack:       JavaScript, HTML5, CSS3, Authentication Handlers
      • Metrics:     Student ID Auth | Transparent Audit Logs | Mobile-First UI
@@ -783,7 +888,7 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/s-voting
      • Live Demo:   https://github.com/suhail3116/s-voting
 
-[16] BIZCONNECT / BISCOM (Corporate AI Networking Portal)
+[18] BIZCONNECT / BISCOM (Corporate AI Networking Portal)
      • Domain:      AI Co-Founder Matchmaker & Corporate Services Portal
      • Stack:       JavaScript, Node.js, Express, Claude API
      • Metrics:     Claude Profile Matching | Vector Similarity | Personalized Icebreakers
@@ -791,13 +896,29 @@ export const PORTFOLIO_DATA = {
      • GitHub Repo: https://github.com/suhail3116/biscom
      • Live Demo:   https://github.com/suhail3116/biscom
 
-[17] CRASHER (Web Game & Canvas Benchmark)
+[19] CRASHER (Web Game & Canvas Benchmark)
      • Domain:      Arcade Web Game & Browser Canvas 2D Benchmark
      • Stack:       JavaScript, HTML5 Canvas 2D, Game Loop
      • Metrics:     60 FPS Canvas Game Loop | Collision Engine | Score Multiplier
      • Details:     Arcade-style browser web game utilizing Canvas 2D frame rendering, collision detection algorithms, score multipliers, and keyboard/touch controls.
      • GitHub Repo: https://github.com/suhail3116/crasher
-     • Live Demo:   https://github.com/suhail3116/crasher`,
+     • Live Demo:   https://github.com/suhail3116/crasher
+
+[20] VALENCE MOTORS HYPERCAR (Frontend & 3D Web)
+     • Domain:      Cyberpunk Digital Showroom for Solid-State Battery Hypercar Startup
+     • Stack:       React, JavaScript, Tailwind CSS, Interactive UI, Cyberpunk Design
+     • Metrics:     Valence Hypercar | Cyberpunk Aero | 60 FPS Interactive
+     • Details:     A luxury digital showroom web experience for Valence Motors featuring active morphing aerodynamics, biometric cockpit telemetry showcase, and futuristic interactive automotive configurator.
+     • GitHub Repo: https://github.com/suhail3116/car-landing-page
+     • Live Demo:   https://github.com/suhail3116/car-landing-page
+
+[21] PRO DEVELOPER PORTFOLIO (Full Stack & 3D Web)
+     • Domain:      Modern Personal Portfolio with WebGL Particle Engine & Custom CLI
+     • Stack:       React 18, TypeScript, Tailwind CSS, Motion, Vite, Canvas
+     • Metrics:     React + Vite + TS | Motion & Canvas | Embedded CLI Terminal
+     • Details:     Production developer portfolio web platform engineered with interactive 3D WebGL coverflow carousel, custom CLI command-line emulator, dynamic theme switcher, and verified credential archives.
+     • GitHub Repo: https://github.com/suhail3116/portfolio
+     • Live Demo:   https://github.com/suhail3116/portfolio`,
     edu: "EDUCATION:\n  • B.E. Computer Science Engineering @ Dhaanish Ahmed Institute of Tech, Coimbatore (Pursuing)\n  • Diploma in Computer Science Engineering (Completed)",
     certs: `=== M MUHAMMED SUHAIL // VERIFIED INDUSTRY CERTIFICATIONS & LICENSES ===
 

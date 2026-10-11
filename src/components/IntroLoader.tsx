@@ -22,9 +22,10 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
     "Ready to Launch Experience!"
   ];
 
-  // Divide 17 projects into two running streams for double marquee motion
-  const topProjects = projects.slice(0, 9);
-  const bottomProjects = projects.slice(9, 17);
+  // Divide all projects into two running streams for double marquee motion
+  const half = Math.ceil(projects.length / 2);
+  const topProjects = projects.slice(0, half);
+  const bottomProjects = projects.slice(half);
 
   useEffect(() => {
     // 7 seconds total loading duration (7000ms / 100 = 70ms per 1%)

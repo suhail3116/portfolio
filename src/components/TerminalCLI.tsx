@@ -77,7 +77,7 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onCycleTheme }) => {
         } else {
           setLogs((prev) => [
             ...prev,
-            { command: cmd, output: `No project found matching "${query}". Type "projects" to view all 17 projects.` }
+            { command: cmd, output: `No project found matching "${query}". Type "projects" to view all ${PORTFOLIO_DATA.projects.length} projects.` }
           ]);
           return;
         }

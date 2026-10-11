@@ -7,6 +7,42 @@ const UNSPLASH = (id: string) =>
 
 const SLIDES = [
   {
+    src: "/assets/projects/rag_guide.jpg",
+    alt: "WikiAgent: Local Technical Knowledge RAG Chatbot & Agent",
+    title: "WikiAgent Local RAG Agent",
+    subtitle: "100% Private Grounded RAG with Ollama, LangChain & ChromaDB",
+    href: "https://github.com/suhail3116/RAG-Guide",
+    meta: [
+      { label: "Project", value: "RAG-Guide" },
+      { label: "Engine", value: "ChromaDB + Ollama" },
+      { label: "Author", value: "suhail3116" },
+    ],
+  },
+  {
+    src: "/assets/projects/sih26045.jpg",
+    alt: "IP-SAKTI Sahayak (SIH26045) Multilingual AYUSH RAG Assistant",
+    title: "IP-SAKTI Sahayak AI",
+    subtitle: "Multilingual Voice-First RAG for AYUSH IP & Regulatory Law",
+    href: "https://github.com/suhail3116/SIH26045-Problem-Solution",
+    meta: [
+      { label: "Project", value: "SIH26045" },
+      { label: "Search", value: "BM25 + Dense Hybrid" },
+      { label: "Author", value: "suhail3116" },
+    ],
+  },
+  {
+    src: "/assets/projects/valence_hypercar.jpg",
+    alt: "VALENCE MOTORS Ultra-Luxury Electric Hypercar Web Showcase",
+    title: "Valence Motors Hypercar",
+    subtitle: "Cyberpunk Digital Showroom for Solid-State Battery Hypercar",
+    href: "https://github.com/suhail3116/car-landing-page",
+    meta: [
+      { label: "Project", value: "car-landing-page" },
+      { label: "Tech", value: "React, Cyber UI" },
+      { label: "Author", value: "suhail3116" },
+    ],
+  },
+  {
     src: "/assets/projects/sumaiya_tailors.jpg",
     alt: "Sumaiya Tailors Luxury Bespoke Blouse & Maggam Work Website",
     title: "Sumaiya Tailors Client Showcase",
